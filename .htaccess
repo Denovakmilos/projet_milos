@@ -1,0 +1,6 @@
+#indiquer que nous avons une réecriture d'activé
+RewriteEngine On
+#pré condition, 
+RewriteCond %{REQUEST_FILENAME} !-f 
+#créer une regle pour récuperer toute l'url, Drapeau QSA pour enchainer les parametres si il y en a plusieurs et L pour la derniere url atteinte
+RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
