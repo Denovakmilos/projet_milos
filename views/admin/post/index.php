@@ -1,3 +1,5 @@
+<br>
+
 <h1>Administration des articles</h1>
 
 <?php if(isset($_GET['success'])): ?>

@@ -77,7 +77,8 @@ body {margin:0;height:2000px;}
 
 
 <nav class="navbar navbar-expand-lg" style="background-color: lightgray; position:sticky; top:0px;z-index:2;">
-  <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home"></i>Blog</a>
+<img src="/public/img/miloslogo.png" style="width:6%">
+  <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -91,9 +92,18 @@ body {margin:0;height:2000px;}
         <a class="nav-link" href="/posts">Les derniers articles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/pictures">Galerie d'Images</a>
+        <a class="nav-link " href="/pictures">Galerie d'Images</a>
       </li>
     </ul>
+    <?php if (isset($_SESSION['auth'])):?>
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item" style="background-color: rgba(0, 0, 0, 0.2): border: radius 25px;" >
+        <a class="nav-link" href="/admin/posts"><i class="fa fa-fw fa-user"></i>Interface ADMIN</a>
+      </li>
+      
+    </ul>
+    <?php endif ?>
   </div>
 
   <div>
@@ -106,9 +116,9 @@ body {margin:0;height:2000px;}
     <?php endif ?>
     <?php if (isset($_SESSION['auth'])):?>
     <ul class="navbar-nav ml-auto">
-      
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Se déconnecter</a>
+
+      <li class="nav-item" style="background-color: rgba(0, 0, 0, 0.2);" >
+        <a class="nav-link" href="/logout"><i class="fa fa-power-off"></i>Se déconnecter</a>
       </li>
       
     </ul>
@@ -159,7 +169,7 @@ body {margin:0;height:2000px;}
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); position:sticky;">
   <a href="mailto:milosnono@gmail.com"><i class="fa fa-fw fa-envelope"></i>Contact</a>
     © 2022 Copyright:
     <a class="text-white" href="#">Milos DeNovak</a>
